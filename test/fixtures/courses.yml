@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  start_time: 2024-11-14 19:00:29
+  end_time: 2024-11-14 19:00:29
+  capacity: 1
+  price: 9.99
+
+two:
+  name: MyString
+  description: MyText
+  start_time: 2024-11-14 19:00:29
+  end_time: 2024-11-14 19:00:29
+  capacity: 1
+  price: 9.99
