@@ -7,7 +7,6 @@ class CreateCourses < ActiveRecord::Migration[7.2]
       t.datetime :end_time
       t.integer :capacity
       t.decimal :price, precision: 8, scale: 2
-
       t.timestamps
     end
   end

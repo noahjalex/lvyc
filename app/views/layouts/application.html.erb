@@ -13,13 +13,29 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "application", media: 'all', "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <ul class="flex bg-gray-800 p-0 m-0 overflow-hidden">
+      <li class="flex-none">
+        <a href="#home" class="block text-white text-center py-3 px-4 no-underline hover:bg-gray-900">Home</a>
+      </li>
+      <li class="flex-none">
+        <%= link_to "Courses", courses_path, class: "block text-white text-center py-3 px-4 no-underline hover:bg-gray-900" %>
+      </li>
+      <li class="flex-none">
+        <a href="#membership" class="block text-white text-center py-3 px-4 no-underline hover:bg-gray-900">Membership</a>
+      </li>
+      <li class="flex-none">
+        <%= link_to "About Us", about_path, class:"block text-white text-center py-3 px-4 no-underline hover:bg-gray-900" %>
+      </li>
+    </ul>
+
+    <main>
       <%= yield %>
     </main>
   </body>

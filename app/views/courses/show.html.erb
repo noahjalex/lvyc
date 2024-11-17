@@ -1,10 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<p style="color:green"><%= notice %></p>
 
 <%= render @course %>
 
-<div>
-  <%= link_to "Edit this course", edit_course_path(@course) %> |
-  <%= link_to "Back to courses", courses_path %>
+<span class="inline-flex overflow-hidden rounded-md border bg-white shadow-sm">
+  <%= link_to "Edit this course", edit_course_path(@course), class:"inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative" %>
+  <%= link_to "Back to courses", courses_path, class:"inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative" %>
+  <%= button_to "Destroy", @course, method: :delete, class:"inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative" %>
+</span>
 
-  <%= button_to "Destroy this course", @course, method: :delete %>
-</div>
+<p class="text-green-500"><%= notice %></p>

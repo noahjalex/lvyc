@@ -1,12 +1,28 @@
-<% content_for :title, "Editing course" %>
+<div class="mx-auto wmax-w-screen-xl px-4 py-0 sm:px-6 sm:py-12 lg:px-8 w-full ">
+  <div class="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
+    <div>
+      <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">Courses</h1>
 
-<h1>Editing course</h1>
+      <p class="mt-1.5 text-sm text-gray-500">
+        <% content_for :title, "Editing Course" %>
+      </p>
+    </div>
 
-<%= render "form", course: @course %>
+    <div class="flex items-center gap-4">
 
-<br>
-
+      <%= link_to  courses_path, 
+        class: "inline-block rounded bg-indigo-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring" do %>
+        Back to Courses
+      <% end %>
+    </div>
+  </div>
+</div>
 <div>
-  <%= link_to "Show this course", @course %> |
-  <%= link_to "Back to courses", courses_path %>
+
+    <%= render "form", course: @course %>
+
+  <span class="inline-flex overflow-hidden rounded-md border bg-white shadow-sm">
+    <%= link_to "Show this Course", @course, class:"inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative" %>
+    <%= link_to "Back to courses", courses_path, class:"inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:relative" %>
+  </span>
 </div>
