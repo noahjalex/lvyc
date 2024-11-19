@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_16_014923) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_19_012222) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -21,5 +21,25 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_16_014923) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "image_url", default: "dinghy.jpg"
+    t.integer "registration_id"
+    t.index ["registration_id"], name: "index_courses_on_registration_id"
   end
+
+  create_table "registrations", force: :cascade do |t|
+    t.string "name"
+    t.text "username"
+    t.string "email"
+    t.integer "pay_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "courses", "registrations"
 end

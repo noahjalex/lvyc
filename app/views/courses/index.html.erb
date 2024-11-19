@@ -43,6 +43,7 @@
                   <%= number_to_currency(course.price) %>
                 </p>
                 <%= link_to "Show this course", course, class: "text-right text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-600 dark:text-white font-medium text-sm rounded-full px-5 me-2 mb-2 dark:border-gray-600 dark:hover:bg-gray-700" %>
+                <%= link_to "Register", new_registration_path(course_id: course.id), class: "text-right text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-600 dark:text-white font-medium text-sm rounded-full px-5 me-2 mb-2 dark:border-gray-600 dark:hover:bg-gray-700" %>
               </div>
         </div>
       </li>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :registrations, only: [ :new, :create ]
+  resources :users
   get "about", to: "pages#about"
   resources :courses
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -12,5 +14,5 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "pages#home"
 end
