@@ -1,14 +1,15 @@
+admin_email = 'admin@example.com'
+admin_password = 'password'
 
+admin = User.find_or_initialize_by(email: admin_email)
+admin.update!(
+  password: admin_password,
+  password_confirmation: admin_password,
+  admin: true
+)
+
+puts "Admin created: #{admin.email} / #{admin_password}"
 # Helper method to generate random dates in summer 2025 (June-August)
-def random_dates(length)
-  earliest_date = Date.new(2025, 6, 1)
-  end_date = Date.new(2025, 8, 31)
-
-  # Pick random days between these days (start_course, end_course)
-  start_course = earliest_date + rand(90)
-  end_course = start_course + length
-  [ start_course, end_course ]
-end
 
 Course.delete_all
 courses = [

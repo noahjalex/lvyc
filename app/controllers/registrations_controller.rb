@@ -1,4 +1,5 @@
 class RegistrationsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[ new create ]
   before_action :set_registration, only: %i[ show edit update destroy ]
 
   # GET /registrations or /registrations.json

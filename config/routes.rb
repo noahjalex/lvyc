@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get "admin" => "admin#index"
+
+  controller :sessions do
+    get "login" => :new
+    post "login" => :create
+    delete "logout" => :destroy
+  end
+
+  get "sessions/create"
+  get "sessions/destroy"
+  resources :members
   resources :registrations, only: [ :new, :create ]
   resources :users
   get "about", to: "pages#about"

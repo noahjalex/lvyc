@@ -102,7 +102,10 @@ TODO:
 - [x] Add tests for courses
 - [x] Add MVC for course_registrations
 
-- [ ] Add memberships MVC
+- [x] Add memberships MVC
+- [x] Add memberships MVC testing
 - [ ] Add handling for user side and admin side, separation of abilities for courses, registrations, memberships,
+
+- [ ] Add event MVC, for admins to post events and for all to see.
 
 * ...

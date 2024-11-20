@@ -62,3 +62,7 @@ end
 
 gem "tailwindcss", "~> 0.1.1"
 gem "tailwindcss-rails"
+
+
+gem "devise"
+gem "cancancan", "~> 3.0"
