@@ -1,0 +1,10 @@
+<h1>Become a new member today!</h1>
+<h1>Sign Up</h1>
+<% if current_user %>
+    Logged in as <%= current_user.email %>
+    <%= link_to "Logout", logout_path, method: :delete %>
+
+<% else %>
+    <%= link_to "Login", login_path %>
+    <%= link_to "Sign Up", new_user_path %>
+<% end %>

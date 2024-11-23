@@ -39,9 +39,17 @@
       <li class="flex-none">
         <%= link_to "About Us", about_path, class:"block text-white text-center py-3 px-4 no-underline hover:bg-gray-900" %>
       </li>
+      <% if !user_signed_in? %>
+        <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+      <% else %>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+      <% end %>
     </ul>
 
     <main>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
       <%= yield %>
     </main>
   </body>

@@ -2,17 +2,21 @@ Rails.application.routes.draw do
   devise_for :users
   get "admin" => "admin#index"
 
-  controller :sessions do
-    get "login" => :new
-    post "login" => :create
-    delete "logout" => :destroy
+  namespace :courses do
+    resources :registrations, only: [ :new, :create ]
   end
+
+  resources :courses do
+    resources :course_registrations, only: [ :new, :create ]
+  end
+
+  resources :course_registrations, only: [ :index, :show, :edit, :update, :destroy ]
 
   get "sessions/create"
   get "sessions/destroy"
-  resources :members
-  resources :registrations, only: [ :new, :create ]
-  resources :users
+
+  # resources :registrations, only: [ :new, :create ]
+  # resources :users
   get "about", to: "pages#about"
   resources :courses
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
