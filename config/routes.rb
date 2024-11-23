@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   # resources :registrations, only: [ :new, :create ]
   # resources :users
   get "about", to: "pages#about"
+  get "membership", to: "pages#membership"
   resources :courses
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

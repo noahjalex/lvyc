@@ -1,15 +1,23 @@
-admin_email = 'admin@example.com'
-admin_password = 'password'
 
-admin = User.find_or_initialize_by(email: admin_email)
-admin.update!(
-  password: admin_password,
-  password_confirmation: admin_password,
-  admin: true
+User.create!(
+  email: 'user@example.com',
+  first_name: 'Rob',
+  last_name: 'Bos',
+  password: 'password',
+  password_confirmation: 'password',
+  confirmed_at: Time.now
+
 )
 
-puts "Admin created: #{admin.email} / #{admin_password}"
-# Helper method to generate random dates in summer 2025 (June-August)
+User.create!(
+  email: 'admin@example.com',
+  first_name: 'Noah',
+  last_name: 'Alexander',
+  password: 'password',
+  password_confirmation: 'password',
+  admin: true,
+  confirmed_at: Time.now
+)
 
 Course.delete_all
 courses = [

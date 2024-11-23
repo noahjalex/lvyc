@@ -104,8 +104,10 @@ TODO:
 
 - [x] Add memberships MVC
 - [x] Add memberships MVC testing
-- [ ] Add handling for user side and admin side, separation of abilities for courses, registrations, memberships,
+- [x] Add handling for user side and admin side.
+- [x] Fix sign_out route invalid for users.
+- [ ] Add memberships boolean to users. Add conditional views to show forms if user is not a member.
 
-- [ ] Add event MVC, for admins to post events and for all to see.
+- [ ] Add event MVC, for users to post events and only users can modify their own events.
 
 * ...

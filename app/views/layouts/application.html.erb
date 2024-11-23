@@ -34,16 +34,18 @@
         <%= link_to "Courses", courses_path, class: "block text-white text-center py-3 px-4 no-underline hover:bg-gray-900" %>
       </li>
       <li class="flex-none">
-        <a href="#membership" class="block text-white text-center py-3 px-4 no-underline hover:bg-gray-900">Membership</a>
+        <%= link_to "Membership", membership_path, class:"block text-white text-center py-3 px-4 no-underline hover:bg-gray-900" %>
       </li>
       <li class="flex-none">
         <%= link_to "About Us", about_path, class:"block text-white text-center py-3 px-4 no-underline hover:bg-gray-900" %>
       </li>
+      <li class="flex-none">
       <% if !user_signed_in? %>
-        <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+        <%= link_to "Login", new_user_session_path, class: "block text-white text-center py-3 px-4 no-underline hover:bg-gray-900" %>
       <% else %>
-        <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "block text-white text-center py-3 px-4 no-underline hover:bg-gray-900" %>
       <% end %>
+      </li>
     </ul>
 
     <main>
