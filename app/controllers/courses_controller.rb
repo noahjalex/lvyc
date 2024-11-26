@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[ index show ]
-  load_and_authorize_resource
-  # before_action :set_course, only: %i[ show edit update destroy ]
+  # load_and_authorize_resource
+  before_action :set_course, only: %i[ show edit update destroy ]
 
   # GET /courses or /courses.json
   def index

@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_23_204413) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_25_231227) do
   create_table "course_registrations", force: :cascade do |t|
-    t.string "name"
-    t.text "username"
     t.string "email"
-    t.integer "pay_type"
+    t.string "pay_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
     t.integer "course_id", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "age"
+    t.boolean "member", default: false
     t.index ["course_id"], name: "index_course_registrations_on_course_id"
     t.index ["user_id"], name: "index_course_registrations_on_user_id"
   end
@@ -34,8 +36,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_23_204413) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "image_url", default: "dinghy.jpg"
-    t.integer "registration_id"
-    t.index ["registration_id"], name: "index_courses_on_registration_id"
+    t.integer "course_registration_id"
+    t.index ["course_registration_id"], name: "index_courses_on_course_registration_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -44,6 +46,13 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_23_204413) do
     t.string "image_url"
     t.datetime "date"
     t.boolean "archived", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.string "name"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -67,6 +76,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_23_204413) do
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.boolean "admin", default: false
+    t.boolean "member", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -74,5 +84,5 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_23_204413) do
 
   add_foreign_key "course_registrations", "courses"
   add_foreign_key "course_registrations", "users"
-  add_foreign_key "courses", "course_registrations", column: "registration_id"
+  add_foreign_key "courses", "course_registrations"
 end

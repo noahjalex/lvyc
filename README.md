@@ -106,8 +106,11 @@ TODO:
 - [x] Add memberships MVC testing
 - [x] Add handling for user side and admin side.
 - [x] Fix sign_out route invalid for users.
-- [ ] Add memberships boolean to users. Add conditional views to show forms if user is not a member.
+- [ ] Add memberships boolean to users. Add conditional views to show email form if user is not a member. Add admin view for memberships to show all members and allow for them to add a new member.
+- [ ] Add mailer handling for membership intake form submissions.
+- [ ] Update unit-tests for all controllers.
 
 - [ ] Add event MVC, for users to post events and only users can modify their own events.
+- [ ] Add proper mailer handling.
 
 * ...

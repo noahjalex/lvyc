@@ -15,8 +15,6 @@ Rails.application.routes.draw do
   get "sessions/create"
   get "sessions/destroy"
 
-  # resources :registrations, only: [ :new, :create ]
-  # resources :users
   get "about", to: "pages#about"
   get "membership", to: "pages#membership"
   resources :courses

@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+non_member:
+  email: nonmember@example.com
+  pay_type: "Credit Card"
+  user_id: one
+  course_id: one
+  first_name: MyString
+  last_name: MyString
+  age: 18
+  member: false
+
+member:
+  email: member@example.com
+  pay_type: "Credit Card"
+  user_id: two
+  course_id: one
+  first_name: MyString
+  last_name: MyString
+  age: 18
+  member: true

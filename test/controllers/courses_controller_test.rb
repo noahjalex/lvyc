@@ -7,6 +7,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get courses_url
+    puts response.body
     assert_response :success
   end
 

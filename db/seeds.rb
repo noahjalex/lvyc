@@ -1,23 +1,40 @@
 
-User.create!(
-  email: 'user@example.com',
-  first_name: 'Rob',
-  last_name: 'Bos',
-  password: 'password',
-  password_confirmation: 'password',
-  confirmed_at: Time.now
+unless User.exists?(email: 'rob@example.com')
+  User.create!(
+    email: 'rob@example.com',
+    first_name: 'Rob',
+    last_name: 'Bos',
+    password: 'password',
+    member: true,
+    password_confirmation: 'password',
+    confirmed_at: Time.now
 
-)
+  )
+end
+unless User.exists?(email: 'dave@example.com')
+  User.create!(
+    email: 'dave@example.com',
+    first_name: 'Dave',
+    last_name: 'Bos',
+    password: 'password',
+    member: false,
+    password_confirmation: 'password',
+    confirmed_at: Time.now
 
-User.create!(
-  email: 'admin@example.com',
-  first_name: 'Noah',
-  last_name: 'Alexander',
-  password: 'password',
-  password_confirmation: 'password',
-  admin: true,
-  confirmed_at: Time.now
-)
+  )
+end
+
+unless User.exists?(email: 'admin@example.com')
+  User.create!(
+    email: 'admin@example.com',
+    first_name: 'Super',
+    last_name: 'Hero',
+    password: 'password',
+    password_confirmation: 'password',
+    admin: true,
+    confirmed_at: Time.now
+  )
+end
 
 Course.delete_all
 courses = [

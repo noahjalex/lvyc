@@ -1,20 +1,43 @@
-<h1 class="text-4xl font-bold text-center mt-10">About Us</h2>
-<p class="text-lg text-center mt-5">We are a dedicated team committed to providing exceptional [service or product]. Our mission is to [mission statement].</p>
+<!--
+<div class="p-4">
+    <h1 class="text-gray-800 text-4xl font-bold text-left mt-10">About Us</h2>
+    <p class="text-gray-700 text-lg text-left mt-5">We are a dedicated team committed to providing exceptional [service or product]. Our mission is to [mission statement].</p>
 
-<hr class="my-10 border-gray-300">
+    <hr class="my-10 border-gray-300">
 
-<h3 class="text-2xl font-bold text-center">Our Values</h3>
-<ul class="text-lg text-center list-disc mt-5">
-    <li>Value 1</li>
-    <li>Value 2</li>
-    <li>Value 3</li>
-</ul>
+    <h3 class="text-gray-800 text-2xl font-bold text-left">Our Values</h3>
+    <ul class="text-gray-800 text-lg list-disc mt-5">
+        <li class="pl-4">Value 1</li>
+        <li>Value 2</li>
+        <li>Value 3</li>
+    </ul>
 
-<hr class="my-10 border-gray-300">
+    <hr class="my-10 border-gray-300">
 
-<h3 class="text-2xl font-bold text-center">Our Team</h3>
-<p class="text-lg text-center mt-5">Meet our talented team members.</p>
-<hr class="my-10 border-gray-300">
+    <h3 class="text-gray-800 text-2xl font-bold text-left">Our Team</h3>
+    <p class="text-gray-800 text-lg text-left mt-5">Meet our talented team members.</p>
+    <hr class="my-10 border-gray-300">
 
-<h3 class="text-2xl font-bold text-center">Contact Us</h3>
-<p class="text-lg text-center mt-5">Get in touch with us today.</p>
+    <h3 class="text-gray-800 text-2xl font-bold text-left">Contact Us</h3>
+    <p class="text-gray-800 text-lg text-left mt-5">Get in touch with us today.</p>
+</div>
+-->
+<div class="p-4">
+    <h1 class="text-gray-800 text-4xl font-bold text-left my-10">About Us</h1>
+
+    <div class="col-10 content">
+        <%= image_tag 'about_us.jpg', class: 'border border-solid border-rounded border-gray-300 float-right h-20 w-72 m-5 md:h-max-30' %>
+
+        <h3 class="text-gray-800 text-2xl font-bold text-left my-5">Learn to Sail</h3>
+        <p>Discover the charm of our club and the stunning waters we call home. Whether you're a seasoned sailor or a newcomer to the sport, you'll find everything you need to get started on our <%= link_to "courses page", courses_path, class: "text-blue-600 hover:underline" %>.</p>
+        <h3 class="text-gray-800 text-2xl font-bold text-left my-5">Join our Community</h3>
+        <p>The Lake Vernon Yacht Club is a not-for-profit community of sailors and friends nestled on the shores of beautiful Lake Vernon in Huntsville. Our clubhouse offers stunning views of the lake and surrounding nature, providing the perfect setting for relaxation and recreation. We invite you to explore our club's history and traditions, and to become a part of our vibrant community. To get started, create a free account to view events, participate in courses and meet fellow sailors.</p>
+    </div>
+
+    <hr class="my-10 border-gray-300">
+
+    <h3 class="text-gray-800 text-2xl font-bold text-left">Contact Us</h3>
+    <p class="text-gray-800 text-lg text-left my-5">Get in touch with us today.</p>
+        <p><strong>Phone:</strong> <a href="tel:###-###-####" class="text-blue-600 hover:underline">123-456-7891</a></p>
+        <p><strong>Email:</strong> <a href="mailto:office@example.ca" class="text-blue-600 hover:underline">office@example.ca</a></p>
+</div>

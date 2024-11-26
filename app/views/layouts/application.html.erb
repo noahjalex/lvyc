@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title><%= content_for(:title) || "Lvyc" %></title>
+    <title><%= content_for(:title)%></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
@@ -17,36 +17,10 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-
-    <!--
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
-    -->
   </head>
 
-  <body>
-    <ul class="flex bg-gray-800 p-0 m-0 overflow-hidden">
-      <li class="flex-none">
-        <%= link_to "Home", root_path, class: "block text-white text-center py-3 px-4 no-underline hover:bg-gray-900" %>
-      </li>
-      <li class="flex-none">
-        <%= link_to "Courses", courses_path, class: "block text-white text-center py-3 px-4 no-underline hover:bg-gray-900" %>
-      </li>
-      <li class="flex-none">
-        <%= link_to "Membership", membership_path, class:"block text-white text-center py-3 px-4 no-underline hover:bg-gray-900" %>
-      </li>
-      <li class="flex-none">
-        <%= link_to "About Us", about_path, class:"block text-white text-center py-3 px-4 no-underline hover:bg-gray-900" %>
-      </li>
-      <li class="flex-none">
-      <% if !user_signed_in? %>
-        <%= link_to "Login", new_user_session_path, class: "block text-white text-center py-3 px-4 no-underline hover:bg-gray-900" %>
-      <% else %>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "block text-white text-center py-3 px-4 no-underline hover:bg-gray-900" %>
-      <% end %>
-      </li>
-    </ul>
+  <body class="bg-white text-grey-800 font-montserrat">
+    <%= render "layouts/navbar" %>
 
     <main>
       <p class="notice"><%= notice %></p>

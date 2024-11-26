@@ -1,2 +1,26 @@
-<h1>Become a new member today!</h1>
-<h1>Sign Up</h1>
+<div class="container-fluid m-0 p-0">
+    <div class="row m-0 p-0">
+        <div class="col-12 m-0 p-0">
+            <%= image_tag('membership_banner.jpg', class: "w-full h-96 object-cover object-bottom") %>
+        </div>
+    </div>
+    <div class="row m-0 p-2">
+        <div class="col-1">&nbsp;</div>
+        <div class="col-10">
+            <h1 class="text-gray-800 text-4xl font-bold font-montserrat py-4 px-6 mx-2">Membership</h1>
+            <hr class="border-t-2 border-gray-300 my-4">
+        </div>
+        <div class="col-1">&nbsp;</div>
+    </div>
+</div>
+<div class="container mx-auto p-3">
+    <% if current_user %>
+        <% if current_user.member? %>
+            <%= render 'membership/membership_info' %>
+        <% else %>
+            <%= render 'membership/membership_form' %>
+        <% end %>
+    <% else %>
+        <p>Please log in or sign-up to manage your membership.</p>
+    <% end %>
+</div>

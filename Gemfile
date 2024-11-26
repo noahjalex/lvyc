@@ -66,3 +66,4 @@ gem "tailwindcss-rails"
 
 gem "devise"
 gem "cancancan", "~> 3.0"
+gem "spring"
